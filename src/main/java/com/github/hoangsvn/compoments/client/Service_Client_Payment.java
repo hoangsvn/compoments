@@ -17,10 +17,17 @@ public interface Service_Client_Payment {
 
 
     @GetMapping("/momo-payment")
-    ResponseType<Response_Message, Response_Message> Vnpay_payment(@RequestHeader(value = "Authorization") String Authorization);
+    ResponseType<Response_Message, Response_Message> Momo_Payment(@RequestHeader(value = "Authorization") String Authorization);
 
 
     @GetMapping("/momo-check")
-    ResponseType<Response_Message, Response_Message> Vnpay_check();
+    ResponseType<Response_Message, Response_Message> Momo_check();
+    @GetMapping("/vnpay-payment")
+
+    ResponseType<Response_Message, Response_Message> Vnpay_payment(@RequestHeader(value = "Authorization") String Authorization);
+
+
+    @GetMapping("/vnpay-check")
+    ResponseType<Response_Message, Response_Message> Vnpay_check(@RequestHeader(value = "Authorization") String Authorization);
 
 }
