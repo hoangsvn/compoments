@@ -5,7 +5,6 @@ import com.github.hoangsvn.compoments.payload.response.Response_Message;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -15,7 +14,7 @@ import java.util.MissingFormatWidthException;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
-public class Controller_AppException extends MyResponse  {
+public class AppAdviceExceptions extends MyResponse  {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> appMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
         Map<String, String> res = new HashMap<>();
@@ -34,7 +33,7 @@ public class Controller_AppException extends MyResponse  {
                     Response_Message
                         .builder()
                         .message("No Token Authorization in Header "+ex.getMessage())
-                        .type("Authorization")
+                        .type("APP-Exceptions")
                         .success(false)
                         .build(),
                         rest_controller_fail)
@@ -47,7 +46,7 @@ public class Controller_AppException extends MyResponse  {
                     Response_Message
                         .builder()
                         .message("AppException "+ex.getMessage())
-                        .type("AppException")
+                        .type("APP-Exceptions")
                         .success(false)
                         .build(), rest_controller_fail)
                 );
@@ -58,8 +57,8 @@ public class Controller_AppException extends MyResponse  {
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("AppException MissingFormatWidthException")
-                                .type("AppException")
+                                .message("MissingFormatWidthException "+ex.getMessage())
+                                .type("APP-Exceptions")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
@@ -71,7 +70,7 @@ public class Controller_AppException extends MyResponse  {
                         Response_Message
                                 .builder()
                                 .message("Repository_Exception "+ ex.getMessage())
-                                .type("AppException")
+                                .type("APP-Exceptions")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
@@ -83,7 +82,7 @@ public class Controller_AppException extends MyResponse  {
                         Response_Message
                                 .builder()
                                 .message("NoSuchElementException"+ ex.getMessage())
-                                .type("NoSuchElementException")
+                                .type("APP-Exceptions")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );

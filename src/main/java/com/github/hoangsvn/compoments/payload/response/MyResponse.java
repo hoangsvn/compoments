@@ -6,6 +6,8 @@ import java.util.UUID;
 
 public class MyResponse {
 
+
+
     public ResponseType Response_Data_Message(Object data, Object message){
 
         return  ResponseType.builder()
