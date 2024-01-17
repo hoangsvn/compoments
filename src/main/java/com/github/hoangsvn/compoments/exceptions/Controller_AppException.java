@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.MissingFormatWidthException;
+import java.util.NoSuchElementException;
 
 @RestControllerAdvice
 public class Controller_AppException extends MyResponse  {
@@ -71,6 +72,18 @@ public class Controller_AppException extends MyResponse  {
                                 .builder()
                                 .message("Repository_Exception "+ ex.getMessage())
                                 .type("AppException")
+                                .success(false)
+                                .build(), rest_controller_fail)
+                );
+    }
+    @ExceptionHandler(NoSuchElementException.class)
+    public ResponseEntity<?> AppNoSuchElementException(NoSuchElementException ex) {
+        return ResponseEntity.badRequest()
+                .body(Response_Data_Message(
+                        Response_Message
+                                .builder()
+                                .message("NoSuchElementException"+ ex.getMessage())
+                                .type("NoSuchElementException")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );

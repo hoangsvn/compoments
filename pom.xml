@@ -6,7 +6,7 @@
     <groupId>com.github.hoangsvn</groupId>
     <artifactId>compoments</artifactId>
     <version>0.0.1</version>
-    <url>http://maven.apache.org</url>
+
     <developers>
         <developer>
             <id>hoangsvn</id>
@@ -16,12 +16,12 @@
         </developer>
     </developers>
 
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>3.2.0</version>-->
-<!--        <relativePath/>-->
-<!--    </parent>-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
     <scm>
         <url>https://github.com/hoangsvn/compoments</url>
         <connection>scm:git:git@github.com:hoangsvn/compoments.git</connection>
@@ -53,6 +53,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
+            <optional>true</optional>
 
         </dependency>
 
