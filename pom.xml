@@ -16,18 +16,27 @@
         </developer>
     </developers>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
-        <relativePath/>
-    </parent>
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>3.2.0</version>-->
+<!--        <relativePath/>-->
+<!--    </parent>-->
     <scm>
         <url>https://github.com/hoangsvn/compoments</url>
-        <connection>scm:git:git@github.com:hoángvn/compoments.git</connection>
+        <connection>scm:git:git@github.com:hoangsvn/compoments.git</connection>
         <developerConnection>scm:git:git@github.com:hoangsvn/compoments.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/hoangsvn/compoments</url>
+        </repository>
+    </distributionManagement>
+
+
     <issueManagement>
         <system>Github Issues</system>
         <url>https://github.com/hoangsvn/compoments/issues</url>
@@ -43,8 +52,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
-            <optional>true</optional>
+            <version>1.18.30</version>
+
         </dependency>
 
         <dependency>
@@ -84,5 +93,23 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
