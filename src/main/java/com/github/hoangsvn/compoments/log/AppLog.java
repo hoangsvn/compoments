@@ -2,7 +2,7 @@ package com.github.hoangsvn.compoments.log;
 
 import org.slf4j.LoggerFactory;
 
-public class Log {
+public class AppLog {
 
     public static void INFO(Class<?> clazz, String... value) {
         LoggerFactory.getLogger(clazz).info(LogString(value));
@@ -18,6 +18,7 @@ public class Log {
 
 
     public static String LogString(String... value) {
+
         StringBuilder logMessage = new StringBuilder(String.format("%-45s :", value[0]));
         if (value.length > 1) {
             for (int i = 1; i < value.length; i++) {
