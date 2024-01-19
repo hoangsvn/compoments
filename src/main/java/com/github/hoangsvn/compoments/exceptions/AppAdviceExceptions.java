@@ -85,7 +85,7 @@ public class AppAdviceExceptions extends MyResponse {
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("NoSuchElementException" + ex.getMessage())
+                                .message("NoSuchElementException " + ex.getMessage())
                                 .type("APP-Exceptions")
                                 .success(false)
                                 .build(), rest_controller_fail)
