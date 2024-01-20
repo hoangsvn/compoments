@@ -21,12 +21,15 @@ public class Request_UserInfo implements Serializable {
 	private String fullname;
 
 
-	@Pattern(regexp = "^(?:[0-9] ?){6,14}[0-9]$", message = "Invalid phone number")
+	@Pattern(regexp = "^(\\d{10}|\\d{11})$", message = "Invalid phone number format is 10 or 11 digits long")
 	private String phonenumber;
+
 	@Pattern( regexp = "^https?://.+",  message = "Invalid URL" )
 	private String linkfacebook;
+
 	@Pattern( regexp = "^https?://.+",  message = "Invalid URL" )
 	private String linkinstagram;
+
 	@Pattern( regexp = "^https?://.+",  message = "Invalid URL" )
 	private String linktwitter;
  
@@ -34,4 +37,6 @@ public class Request_UserInfo implements Serializable {
 
 	@Past(message = "Date of birth must be a date in the past")
 	private Date datebirth;
+
+	private String avatar;
 }

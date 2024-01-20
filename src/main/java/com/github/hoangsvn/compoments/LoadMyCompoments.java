@@ -11,6 +11,4 @@ import java.lang.annotation.*;
 @ComponentScan(basePackages = {"com.github.hoangsvn.compoments","com.github.hoangsvn.compoments.exceptions"})
 @EnableCaching
 public @interface LoadMyCompoments {
-
-    String[] value() default {"java", "service", "spring", "server", "eureka", "sun"};
 }

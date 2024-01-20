@@ -7,7 +7,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.MissingFormatWidthException;
@@ -33,34 +32,34 @@ public class AppAdviceExceptions extends MyResponse {
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("TokenException " + ex.getMessage())
-                                .type("APP-Exceptions")
+                                .message(ex.getMessage())
+                                .type("App-TokenException")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
     }
 
     @ExceptionHandler(AppException.class)
-    public ResponseEntity<?> appAppException(AppException ex) {
+    public ResponseEntity<?> AppException(AppException ex) {
         return ResponseEntity.badRequest()
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("AppException " + ex.getMessage())
-                                .type("APP-Exceptions")
+                                .message(ex.getMessage())
+                                .type("App-Exception")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
     }
 
     @ExceptionHandler(MissingFormatWidthException.class)
-    public ResponseEntity<?> aMissingFormatWidthException(MissingFormatWidthException ex) {
+    public ResponseEntity<?> AppMissingFormatWidthException(MissingFormatWidthException ex) {
         return ResponseEntity.badRequest()
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("MissingFormatWidthException " + ex.getMessage())
-                                .type("APP-Exceptions")
+                                .message(ex.getMessage())
+                                .type("App-MissingFormatWidthException")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
@@ -72,8 +71,8 @@ public class AppAdviceExceptions extends MyResponse {
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("AppRepository_Exception " + ex.getMessage())
-                                .type("APP-Exceptions")
+                                .message(ex.getMessage())
+                                .type("App-Repository_Exception")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );
@@ -85,8 +84,8 @@ public class AppAdviceExceptions extends MyResponse {
                 .body(Response_Data_Message(
                         Response_Message
                                 .builder()
-                                .message("NoSuchElementException " + ex.getMessage())
-                                .type("APP-Exceptions")
+                                .message(ex.getMessage())
+                                .type("App-NoSuchElementException")
                                 .success(false)
                                 .build(), rest_controller_fail)
                 );

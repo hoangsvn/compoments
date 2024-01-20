@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@FeignClient(value = "image-service", path = "/api/image")
+@FeignClient(value = "service-image", path = "/api/image")
 public interface Service_Client_Image {
     @GetMapping("/all")
     ResponseType<List<Image_Byte>, Response_Message> getAll();

@@ -1,12 +1,7 @@
 package com.github.hoangsvn.compoments.entitys;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import lombok.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,27 +11,32 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString
+@Builder
+@Data
 @Table(name = "userinfo" ,uniqueConstraints = {@UniqueConstraint(columnNames = "userid")})
 public class UserInFo implements Serializable {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private Long userid;
-	
-	@Size(max = 200)
-	private String fullname;
-	@Size(max = 20)
-	private String phonenumber;
-	@Size(max = 200)
-	private String linkfacebook;
-	@Size(max = 200)
-	private String linkinstagram;
-	@Size(max = 200)
-	private String linktwitter;
-	@Size(max = 200)
-	private String address;
-	private Date datebirth;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long userid;
+
+    @Column(length = 255)
+    private String fullname;
+    @Column(length = 20)
+    private String phonenumber;
+    @Column(length = 255)
+    private String linkfacebook;
+    @Column(length = 255)
+    private String linkinstagram;
+    @Column(length = 255)
+    private String linktwitter;
+    @Column(length = 255)
+    private String address;
+    private Date datebirth;
+    @Column(length = 255)
+    private String avatar;
 
 }
