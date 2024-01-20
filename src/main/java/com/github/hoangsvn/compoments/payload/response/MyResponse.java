@@ -1,10 +1,13 @@
 package com.github.hoangsvn.compoments.payload.response;
 
+import com.github.hoangsvn.compoments.log.AppLog;
+import com.github.hoangsvn.compoments.log.AutoLog;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-public class MyResponse {
+public class MyResponse extends AppLog  {
 
 
 
