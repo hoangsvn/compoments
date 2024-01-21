@@ -32,4 +32,10 @@ public class MyResponse extends AppLog  {
     public static Response_Message rest_controller_fail 	= new Response_Message("REST Controller Fail !", 		"Controller Fail"		, false);
     public static Response_Message rest_controller_success	= new Response_Message("REST Controller Succeess !",	"Controller Success"	, true);
     public static Response_Message rest_controller_error 	= new Response_Message("REST Controller Error !", 		"Controller Error"		, false);
+
+
+    public final String please_login        ="The invoice creation service encountered an error, please try again !";
+
+    public final String not_found_database  ="That was not found in the database , please try again !";
+
 }
