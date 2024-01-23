@@ -20,75 +20,52 @@ public class AppAdviceExceptions extends MyResponse {
         ex.getBindingResult().getAllErrors().forEach(Error -> {
             res.put(((FieldError) Error).getField(), Error.getDefaultMessage());
         });
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        res,
-                        rest_controller_fail));
+        return ReturnError(res);
     }
 
     @ExceptionHandler(TokenException.class)
     public ResponseEntity<?> appTokenException(TokenException ex) {
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        Response_Message
-                                .builder()
-                                .message(ex.getMessage())
-                                .type("App-TokenException")
-                                .success(false)
-                                .build(), rest_controller_fail)
-                );
+        Response_Message responseMessage = Response_Message.builder()
+                .message(ex.getMessage())
+                .type("App-TokenException")
+                .build();
+        return ReturnError(responseMessage);
     }
 
     @ExceptionHandler(AppException.class)
     public ResponseEntity<?> AppException(AppException ex) {
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        Response_Message
-                                .builder()
-                                .message(ex.getMessage())
-                                .type("App-Exception")
-                                .success(false)
-                                .build(), rest_controller_fail)
-                );
+        Response_Message responseMessage = Response_Message.builder()
+                .message(ex.getMessage())
+                .type("App-Exception")
+                .build();
+        return ReturnError(responseMessage);
     }
 
     @ExceptionHandler(MissingFormatWidthException.class)
     public ResponseEntity<?> AppMissingFormatWidthException(MissingFormatWidthException ex) {
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        Response_Message
-                                .builder()
-                                .message(ex.getMessage())
-                                .type("App-MissingFormatWidthException")
-                                .success(false)
-                                .build(), rest_controller_fail)
-                );
+        Response_Message responseMessage = Response_Message.builder()
+                .message(ex.getMessage())
+                .type("App-MissingFormatWidthException")
+                .build();
+        return ReturnError(responseMessage);
     }
 
     @ExceptionHandler(Repository_Exception.class)
     public ResponseEntity<?> AppRepository_Exception(Repository_Exception ex) {
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        Response_Message
-                                .builder()
-                                .message(ex.getMessage())
-                                .type("App-Repository_Exception")
-                                .success(false)
-                                .build(), rest_controller_fail)
-                );
+        Response_Message responseMessage = Response_Message.builder()
+                .message(ex.getMessage())
+                .type("App-Repository-Exception")
+                .build();
+        return ReturnError(responseMessage);
     }
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<?> AppNoSuchElementException(NoSuchElementException ex) {
-        return ResponseEntity.badRequest()
-                .body(Response_Data_Message(
-                        Response_Message
-                                .builder()
-                                .message(ex.getMessage())
-                                .type("App-NoSuchElementException")
-                                .success(false)
-                                .build(), rest_controller_fail)
-                );
+        Response_Message responseMessage = Response_Message.builder()
+                .message(ex.getMessage())
+                .type("App-NoSuchElementException")
+                .build();
+        return ReturnError(responseMessage);
     }
 
 }

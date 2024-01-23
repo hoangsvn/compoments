@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseType<T,V> implements Serializable {
+public class ResponseType<T> implements Serializable {
     public T data;
-    public V message;
+    public boolean status;
 }
