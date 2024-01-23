@@ -1,7 +1,8 @@
-package com.github.hoangsvn.compoments.entitys;
+package com.github.hoangsvn.compoments.entitys.auth;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ import java.util.Date;
 @ToString
 @Builder
 @Data
-@Table(name = "userinfo" ,uniqueConstraints = {@UniqueConstraint(columnNames = "userid")})
+@Table(name = "service-auth-userinfo" ,uniqueConstraints = {@UniqueConstraint(columnNames = "userid")})
 public class UserInFo implements Serializable {
 
     @Id

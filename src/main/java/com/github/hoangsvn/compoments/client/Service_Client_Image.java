@@ -2,7 +2,7 @@ package com.github.hoangsvn.compoments.client;
 
 
 
-import com.github.hoangsvn.compoments.entitys.*;
+import com.github.hoangsvn.compoments.entitys.imagebyte.Image_Byte;
 import com.github.hoangsvn.compoments.payload.response.ResponseType;
 import com.github.hoangsvn.compoments.payload.response.Response_Message;
 import org.springframework.cloud.openfeign.FeignClient;

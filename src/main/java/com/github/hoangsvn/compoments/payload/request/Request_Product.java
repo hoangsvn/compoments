@@ -1,7 +1,7 @@
 package com.github.hoangsvn.compoments.payload.request;
 
-import com.github.hoangsvn.compoments.entitys.DanhMuc;
-import com.github.hoangsvn.compoments.entitys.HinhAnh;
+import com.github.hoangsvn.compoments.entitys.product.DanhMuc;
+import com.github.hoangsvn.compoments.entitys.product.HinhAnh;
 import lombok.*;
 
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package com.github.hoangsvn.compoments.client;
 
-import com.github.hoangsvn.compoments.entitys.*;
+import com.github.hoangsvn.compoments.entitys.auth.User;
 import com.github.hoangsvn.compoments.payload.response.ResponseType;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

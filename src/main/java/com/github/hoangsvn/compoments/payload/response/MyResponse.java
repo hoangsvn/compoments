@@ -57,6 +57,6 @@ public class MyResponse extends AppLog {
     public final static Response_Message rest_delete_success = new Response_Message("Deleted successfully !", "Controller");
     public final static Response_Message rest_delete_error = new Response_Message("Deleted error !", "Controller");
     public final static Response_Message rest_controller_exception = new Response_Message("A service exception occurred, please try again !", "Exception");
-
+    public final static Response_Message rest_controller_unable_token = new Response_Message("Unable to authenticate user via token, please try again", "Exception");
     public final static Response_Message rest_controller_upload_exception = new Response_Message("An exception occurred while the upload failed, please try again", "Exception");
 }

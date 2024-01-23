@@ -1,4 +1,4 @@
-package com.github.hoangsvn.compoments.entitys;
+package com.github.hoangsvn.compoments.entitys.auth;
 
 
 public enum ERole {

@@ -1,9 +1,10 @@
-package com.github.hoangsvn.compoments.entitys;
+package com.github.hoangsvn.compoments.entitys.product;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Date;
 
 
 @Setter
@@ -12,12 +13,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "danhmuc")
-public class DanhMuc implements Serializable {
-
+@Table(name = "hinhanh")
+public class HinhAnh implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private Long sanpham_id;
+	private String link;
+	private Date create_at;
 
 }
