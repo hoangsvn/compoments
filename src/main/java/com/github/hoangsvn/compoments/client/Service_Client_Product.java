@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(value = "service-product", path = "/api/product")
 public interface Service_Client_Product {
     @GetMapping("/test")
-    ResponseType<Response_Message, Response_Message> Test();
+    ResponseType<Response_Message> Test();
 }

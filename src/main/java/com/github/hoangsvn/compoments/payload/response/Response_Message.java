@@ -13,6 +13,4 @@ import java.io.Serializable;
 public class Response_Message implements Serializable {
 	private String message ;
 	private String type;
-	private boolean success ;
-
 }

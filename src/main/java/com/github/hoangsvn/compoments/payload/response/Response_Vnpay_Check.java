@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Response_Vnpay_Check implements Serializable {
+public class Response_Vnpay_Check implements Serializable   {
     private String vnp_ResponseId;
     private String vnp_Command;
     private String vnp_ResponseCode;
