@@ -35,9 +35,12 @@ public class User implements Serializable {
 	@JoinTable(name = "service-auth-user-roles", joinColumns = @JoinColumn(name = "user-id"), inverseJoinColumns = @JoinColumn(name = "role-id"))
 	private Set<Role> roles = new HashSet<>();
 
-	
     @OneToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     @JoinColumn(table = "service-auth-user-userinfo",name = "id", referencedColumnName = "user-id")
     private UserInFo userinfo ;
+
+	@OneToOne( fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
+	@JoinTable(name = "service-auth-user-provider", joinColumns = @JoinColumn(name = "user-id"), inverseJoinColumns = @JoinColumn(name = "provider-id"))
+	private Provider provider ;
 
 }
