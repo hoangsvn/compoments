@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Setter
@@ -31,13 +31,17 @@ public class User implements Serializable {
 	@Column(length = 255)
 	private String password;
 
-	@ManyToMany( fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
-	@JoinTable(name = "service-auth-user-roles", joinColumns = @JoinColumn(name = "user-id"), inverseJoinColumns = @JoinColumn(name = "role-id"))
-	private Set<Role> roles = new HashSet<>();
+	@ElementCollection(targetClass = ERole.class ,fetch = FetchType.EAGER)
+	@Enumerated(EnumType.STRING)
+	@CollectionTable(name = "service-auth-user-roles", joinColumns = @JoinColumn(name = "user_id"))
+	private List<ERole> roles = new ArrayList<>();
 
-	
     @OneToOne(fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     @JoinColumn(table = "service-auth-user-userinfo",name = "id", referencedColumnName = "user-id")
     private UserInFo userinfo ;
+
+
+	@Enumerated(EnumType.STRING )
+	private EProvider provider = EProvider.local;
 
 }
