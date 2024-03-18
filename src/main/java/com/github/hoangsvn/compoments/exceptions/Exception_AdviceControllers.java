@@ -13,7 +13,7 @@ import java.util.MissingFormatWidthException;
 import java.util.NoSuchElementException;
 
 @RestControllerAdvice
-public class AppAdviceExceptions extends MyResponse {
+public class Exception_AdviceControllers extends MyResponse {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> appMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
         Map<String, String> res = new HashMap<>();
@@ -23,8 +23,8 @@ public class AppAdviceExceptions extends MyResponse {
         return ReturnError(res);
     }
 
-    @ExceptionHandler(TokenException.class)
-    public ResponseEntity<?> appTokenException(TokenException ex) {
+    @ExceptionHandler(Exception_Token.class)
+    public ResponseEntity<?> appTokenException(Exception_Token ex) {
         Response_Message responseMessage = Response_Message.builder()
                 .message(ex.getMessage())
                 .type("App-TokenException")
@@ -32,8 +32,8 @@ public class AppAdviceExceptions extends MyResponse {
         return ReturnError(responseMessage);
     }
 
-    @ExceptionHandler(AppException.class)
-    public ResponseEntity<?> AppException(AppException ex) {
+    @ExceptionHandler(Exception_Application.class)
+    public ResponseEntity<?> AppException(Exception_Application ex) {
         Response_Message responseMessage = Response_Message.builder()
                 .message(ex.getMessage())
                 .type("App-Exception")
@@ -50,8 +50,8 @@ public class AppAdviceExceptions extends MyResponse {
         return ReturnError(responseMessage);
     }
 
-    @ExceptionHandler(Repository_Exception.class)
-    public ResponseEntity<?> AppRepository_Exception(Repository_Exception ex) {
+    @ExceptionHandler(Exception_Repository.class)
+    public ResponseEntity<?> AppRepository_Exception(Exception_Repository ex) {
         Response_Message responseMessage = Response_Message.builder()
                 .message(ex.getMessage())
                 .type("App-Repository-Exception")
