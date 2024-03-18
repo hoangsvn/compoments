@@ -1,5 +1,6 @@
-package com.github.hoangsvn.compoments.log;
+package com.github.hoangsvn.compoments.uilts;
 
+import com.github.hoangsvn.compoments.log.AppLog;
 import com.github.hoangsvn.compoments.payload.response.ResponseType;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,41 +11,41 @@ import java.util.UUID;
 
 public class AppUitls extends AppLog {
 
-    public ResponseEntity<?> ReturnDataMessage(int statuscode, Object data, boolean status) {
+    public static ResponseEntity<?> ReturnDataMessage(int statuscode, Object data, boolean status) {
         return ResponseEntity.status(statuscode).body(ResponseType.builder()
                 .data(data)
                 .status(status)
                 .build());
     }
 
-    public ResponseEntity<?> ReturnDataMessage(HttpStatus statuscode, Object data, boolean status) {
+    public static ResponseEntity<?> ReturnDataMessage(HttpStatus statuscode, Object data, boolean status) {
         return ResponseEntity.status(statuscode).body(ResponseType.builder()
                 .data(data)
                 .status(status)
                 .build());
     }
 
-    public ResponseEntity<?> ReturnSuccess(Object data) {
+    public static ResponseEntity<?> ReturnSuccess(Object data) {
         return ReturnDataMessage(HttpStatus.OK, data, true);
     }
 
-    public ResponseEntity<?> ReturnError(Object data) {
+    public static ResponseEntity<?> ReturnError(Object data) {
         return ReturnDataMessage(HttpStatus.BAD_REQUEST, data, false);
     }
 
-    public ResponseEntity<?> ReturnNotFound(Object data) {
+    public static ResponseEntity<?> ReturnNotFound(Object data) {
         return ReturnDataMessage(HttpStatus.NOT_FOUND, data, false);
     }
 
-    public String RamdomNameImage(String type) {
+    public static String RamdomFileName(String type) {
         return DateToString() + "-" + Ramdomkey() + "-" + Ramdomkey() + "." + type;
     }
 
-    public String Ramdomkey() {
+    public static String Ramdomkey() {
         return UUID.randomUUID().toString();
     }
 
-    public String DateToString() {
+    public static String DateToString() {
         return new SimpleDateFormat("yyyy-MM-dd-HH-mm-sss").format(new Date());
     }
 }
