@@ -50,7 +50,7 @@ public class User implements Serializable {
 	//INFO
     @Column(length = 300)
     private String avatar="";
-    private String fistname="";
+    private String firstname="";
     private String lastname="";
     private String email="";
     private Date   datebirth;
@@ -68,7 +68,5 @@ public class User implements Serializable {
     private String education="";
     private String description="";
     private String introduction="";
-
-
     //End
 }
