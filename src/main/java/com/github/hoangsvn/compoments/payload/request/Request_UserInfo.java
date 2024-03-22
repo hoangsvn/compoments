@@ -24,7 +24,7 @@ public class Request_UserInfo implements Serializable {
 	private String address;
 	private String avatar;
 
-	private String fistname;
+	private String firstname;
 	private String lastname;
 
 	private String phonenumber;
