@@ -1,4 +1,4 @@
-package com.github.hoangsvn.compoments.entitys.impl;
+package com.github.hoangsvn.compoments.impl;
 
 import java.io.Serializable;
 
