@@ -12,8 +12,6 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "service-novel-chapters")
 public class Chapter implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

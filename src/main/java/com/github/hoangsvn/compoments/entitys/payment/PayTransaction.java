@@ -9,9 +9,7 @@ import java.io.Serializable;
 @Builder
 @Setter
 @Getter
-@Entity
 @Data
-@Table(name = "service-payment-paytransaction" ,uniqueConstraints = {@UniqueConstraint(columnNames = "pay_id")})
 @NoArgsConstructor
 @AllArgsConstructor
 public class PayTransaction implements Serializable {

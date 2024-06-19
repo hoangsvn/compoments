@@ -8,9 +8,7 @@ import java.util.Date;
 @Builder
 @Setter
 @Getter
-@Entity
 @Data
-@Table(name = "service-payment-bill")
 @NoArgsConstructor
 @AllArgsConstructor
 public class PayBill {
