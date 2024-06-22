@@ -17,6 +17,8 @@ public class AutoLog extends AppLog {
 
     private final ApplicationContext applicationContext;
 
+
+
     @PostConstruct
     public void Context() {
         final Environment env = applicationContext.getEnvironment();
