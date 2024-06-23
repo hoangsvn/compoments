@@ -11,8 +11,6 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "danhmuc")
 public class DanhMuc implements Serializable {
 
 	@Id

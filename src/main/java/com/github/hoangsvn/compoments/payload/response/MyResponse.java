@@ -1,13 +1,6 @@
 package com.github.hoangsvn.compoments.payload.response;
 
-import com.github.hoangsvn.compoments.log.AppLog;
-import com.github.hoangsvn.compoments.log.AppUitls;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.UUID;
+import com.github.hoangsvn.compoments.uilts.AppUitls;
 
 public class MyResponse extends AppUitls {
 

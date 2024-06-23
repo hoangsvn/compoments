@@ -16,8 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Data
-@Entity
-@Table(name = "service-auth-users", uniqueConstraints = {@UniqueConstraint(columnNames = "username")})
 public class User implements Serializable {
     //Start
     @Id
@@ -44,31 +42,33 @@ public class User implements Serializable {
             name = "service-auth-user-roles",
             joinColumns = @JoinColumn(name = "user_id"))
     private List<ERole> roles = new ArrayList<>();
+
+
+
     @Enumerated(EnumType.STRING)
     private EProvider provider = EProvider.local;
-
 	//INFO
     @Column(length = 300)
-    private String avatar="";
-    private String fistname="";
-    private String lastname="";
-    private String email="";
+    private String avatar;
+    private String firstname;
+    private String lastname;
+    private String email;
     private Date   datebirth;
-    private String homeaddress="";
-    private String workaddress="";
-    private String phonenumner="";
-    private String nationality="";
-    private String occupation="";
-    private String sociallink0="";
-    private String sociallink1="";
-    private String sociallink2="";
-	private String sociallink3="";
+    private String homeaddress;
+    private String workaddress;
+    private String phonenumner;
+    private String nationality;
+    private String occupation;
+    private String sociallink0;
+    private String sociallink1;
+    private String sociallink2;
+	private String sociallink3;
     @Enumerated(EnumType.STRING)
     private EGender gender = EGender.DEFAULT;
-    private String education="";
-    private String description="";
-    private String introduction="";
+    private String education;
+    private String description;
+    private String introduction;
 
-
-    //End
+    @OneToMany(mappedBy = "user")
+    private List<History> histories ;
 }

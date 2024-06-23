@@ -15,9 +15,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "service-novel-novels"  ,uniqueConstraints = { @UniqueConstraint(columnNames = "path") })
-
 public class Novel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
